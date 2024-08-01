@@ -3,11 +3,17 @@ import axios from "axios";
 import { RAPID_API_KEY } from '@env';
 
 const rapidApiKey = RAPID_API_KEY;
+//const rapidApiKey = process.env.RAPID_API_KEY;
+// console.log('rapidApiKey = ', rapidApiKey);
+// console.log('process.env = ', process.env);
 
-export default useFetch = ( { endpoint, query } ) => {
+export default useFetch = ( endpoint, query ) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
+
+    console.log('endpoint = ', endpoint)
+    console.log('query = ', query)
 
     const options = {
         method: 'GET',
